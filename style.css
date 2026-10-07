@@ -1,0 +1,618 @@
+/* ========================================
+   RESET
+======================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ========================================
+   BODY
+======================================== */
+
+body {
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+
+    padding: 40px 15px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #141e30,
+            #243b55
+        );
+
+    color: white;
+
+}
+
+
+/* ========================================
+   MAIN CONTAINER
+======================================== */
+
+.weather-container {
+
+    width: 100%;
+
+    max-width: 850px;
+
+    text-align: center;
+
+}
+
+
+/* ========================================
+   TITLE
+======================================== */
+
+h1 {
+
+    font-size: 36px;
+
+    margin-bottom: 8px;
+
+}
+
+.subtitle {
+
+    color: #cbd5e1;
+
+    font-size: 16px;
+
+    margin-bottom: 25px;
+
+}
+
+
+/* ========================================
+   SEARCH BOX
+======================================== */
+
+.search-box {
+
+    display: flex;
+
+    gap: 10px;
+
+    margin-bottom: 15px;
+
+}
+
+
+.search-box input {
+
+    flex: 1;
+
+    padding: 15px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    outline: none;
+
+}
+
+
+.search-box button {
+
+    padding: 15px 22px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: #ff6b35;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+
+}
+
+
+.search-box button:hover {
+
+    background: #ff8559;
+
+    transform: translateY(-2px);
+
+}
+
+
+/* ========================================
+   LOCATION BUTTON
+======================================== */
+
+.location-button {
+
+    width: 100%;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 10px;
+
+    background: rgba(255, 255, 255, 0.15);
+
+    color: white;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    margin-bottom: 20px;
+
+    transition: 0.3s;
+
+}
+
+
+.location-button:hover {
+
+    background: rgba(255, 255, 255, 0.25);
+
+}
+
+
+/* ========================================
+   ERROR / LOADING
+======================================== */
+
+.error {
+
+    min-height: 25px;
+
+    margin-bottom: 10px;
+
+    color: #ffb3b3;
+
+    font-size: 15px;
+
+}
+
+
+/* ========================================
+   WEATHER CARD
+======================================== */
+
+.weather-card {
+
+    padding: 30px;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.12);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 10px 30px rgba(0, 0, 0, 0.3);
+
+}
+
+
+.weather-card h2 {
+
+    font-size: 30px;
+
+    margin-bottom: 10px;
+
+}
+
+
+/* ========================================
+   WEATHER ICON
+======================================== */
+
+.weather-icon {
+
+    font-size: 75px;
+
+    margin: 10px;
+
+}
+
+
+/* ========================================
+   TEMPERATURE
+======================================== */
+
+.temperature {
+
+    font-size: 60px;
+
+    font-weight: bold;
+
+}
+
+
+#description {
+
+    font-size: 20px;
+
+    margin: 10px 0 25px;
+
+    text-transform: capitalize;
+
+    color: #e2e8f0;
+
+}
+
+
+/* ========================================
+   WEATHER DETAILS
+======================================== */
+
+.weather-details {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 12px;
+
+}
+
+
+.detail {
+
+    padding: 18px 10px;
+
+    background:
+        rgba(255, 255, 255, 0.1);
+
+    border-radius: 12px;
+
+    transition: 0.3s;
+
+}
+
+
+.detail:hover {
+
+    background:
+        rgba(255, 255, 255, 0.18);
+
+    transform: translateY(-3px);
+
+}
+
+
+.detail span {
+
+    font-size: 28px;
+
+}
+
+
+.detail p {
+
+    font-size: 13px;
+
+    margin: 8px 0;
+
+    color: #cbd5e1;
+
+}
+
+
+.detail strong {
+
+    font-size: 16px;
+
+}
+
+
+/* ========================================
+   SUNRISE / SUNSET
+======================================== */
+
+.sun-details {
+
+    display: flex;
+
+    justify-content: space-around;
+
+    gap: 15px;
+
+    margin-top: 20px;
+
+    padding: 18px;
+
+    background:
+        rgba(255, 255, 255, 0.1);
+
+    border-radius: 12px;
+
+}
+
+
+.sun-details div {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+
+}
+
+
+.sun-details span {
+
+    color: #cbd5e1;
+
+}
+
+
+.sun-details strong {
+
+    font-size: 18px;
+
+}
+
+
+/* ========================================
+   FORECAST SECTION
+======================================== */
+
+.forecast-section {
+
+    margin-top: 30px;
+
+}
+
+
+.forecast-section h2 {
+
+    font-size: 25px;
+
+    margin-bottom: 15px;
+
+}
+
+
+/* ========================================
+   FORECAST CONTAINER
+======================================== */
+
+.forecast-container {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 12px;
+
+}
+
+
+/* ========================================
+   FORECAST CARD
+======================================== */
+
+.forecast-card {
+
+    padding: 18px 10px;
+
+    background:
+        rgba(255, 255, 255, 0.12);
+
+    border-radius: 15px;
+
+    text-align: center;
+
+    backdrop-filter: blur(10px);
+
+    transition: 0.3s;
+
+}
+
+
+.forecast-card:hover {
+
+    background:
+        rgba(255, 255, 255, 0.2);
+
+    transform: translateY(-5px);
+
+}
+
+
+.forecast-card .day {
+
+    font-weight: bold;
+
+    font-size: 16px;
+
+    margin-bottom: 10px;
+
+}
+
+
+.forecast-card .forecast-icon {
+
+    font-size: 38px;
+
+    margin: 8px 0;
+
+}
+
+
+.forecast-card .forecast-temp {
+
+    font-size: 18px;
+
+    font-weight: bold;
+
+}
+
+
+.forecast-card .forecast-description {
+
+    font-size: 12px;
+
+    margin-top: 8px;
+
+    text-transform: capitalize;
+
+    color: #cbd5e1;
+
+}
+
+
+/* ========================================
+   FORECAST LOADING
+======================================== */
+
+.forecast-loading {
+
+    width: 100%;
+
+    padding: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.1);
+
+    border-radius: 12px;
+
+    text-align: center;
+
+    color: #cbd5e1;
+
+}
+
+
+/* ========================================
+   FOOTER
+======================================== */
+
+.footer {
+
+    margin-top: 25px;
+
+    color: #94a3b8;
+
+    font-size: 13px;
+
+}
+
+
+/* ========================================
+   MOBILE RESPONSIVE
+======================================== */
+
+@media (max-width: 700px) {
+
+    h1 {
+
+        font-size: 28px;
+
+    }
+
+
+    .weather-details {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .forecast-container {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+}
+
+
+@media (max-width: 500px) {
+
+    body {
+
+        padding: 20px 10px;
+
+    }
+
+
+    .search-box {
+
+        flex-direction: column;
+
+    }
+
+
+    .search-box button {
+
+        width: 100%;
+
+    }
+
+
+    .weather-card {
+
+        padding: 20px;
+
+    }
+
+
+    .weather-details {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .forecast-container {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+    .temperature {
+
+        font-size: 48px;
+
+    }
+
+
+    .weather-icon {
+
+        font-size: 60px;
+
+    }
+
+}
+.forecast-range {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #cbd5e1;
+}

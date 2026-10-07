@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Roshan Weather Application</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="weather-container">
+
+        <!-- App Title -->
+        <h1>🌤️ Roshan Weather Application</h1>
+
+        <p class="subtitle">
+            Check current weather and 5-day forecast
+        </p>
+
+
+        <!-- Search Box -->
+        <div class="search-box">
+
+            <input
+                type="text"
+                id="cityInput"
+                placeholder="Enter city name"
+                autocomplete="off"
+            >
+
+            <button onclick="getWeather()">
+                🔍 Search
+            </button>
+
+        </div>
+
+
+        <!-- Location Button -->
+        <button
+            class="location-button"
+            onclick="getLocationWeather()"
+        >
+            📍 Use My Location
+        </button>
+
+
+        <!-- Error / Loading -->
+        <div id="error" class="error"></div>
+
+
+        <!-- Current Weather Card -->
+        <div class="weather-card">
+
+            <!-- City -->
+            <h2 id="city">Search a city</h2>
+
+
+            <!-- Weather Icon -->
+            <div
+                class="weather-icon"
+                id="weatherIcon"
+            >
+                🌤️
+            </div>
+
+
+            <!-- Temperature -->
+            <div class="temperature">
+
+                <span id="temperature">--</span>°C
+
+            </div>
+
+
+            <!-- Description -->
+            <p id="description">
+                Weather Condition
+            </p>
+
+
+            <!-- Weather Details -->
+            <div class="weather-details">
+
+
+                <!-- Humidity -->
+                <div class="detail">
+
+                    <span>💧</span>
+
+                    <p>Humidity</p>
+
+                    <strong id="humidity">
+                        --%
+                    </strong>
+
+                </div>
+
+
+                <!-- Wind -->
+                <div class="detail">
+
+                    <span>💨</span>
+
+                    <p>Wind Speed</p>
+
+                    <strong id="wind">
+                        -- km/h
+                    </strong>
+
+                </div>
+
+
+                <!-- Feels Like -->
+                <div class="detail">
+
+                    <span>🌡️</span>
+
+                    <p>Feels Like</p>
+
+                    <strong id="feelsLike">
+                        --°C
+                    </strong>
+
+                </div>
+
+
+                <!-- Clouds -->
+                <div class="detail">
+
+                    <span>☁️</span>
+
+                    <p>Clouds</p>
+
+                    <strong id="clouds">
+                        --%
+                    </strong>
+
+                </div>
+
+
+                <!-- Visibility -->
+                <div class="detail">
+
+                    <span>👁️</span>
+
+                    <p>Visibility</p>
+
+                    <strong id="visibility">
+                        -- km
+                    </strong>
+
+                </div>
+
+
+                <!-- Min Max -->
+                <div class="detail">
+
+                    <span>🌡️</span>
+
+                    <p>Min / Max</p>
+
+                    <strong id="minMax">
+                        --° / --°
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- Sunrise / Sunset -->
+            <div class="sun-details">
+
+                <div>
+
+                    <span>🌅 Sunrise</span>
+
+                    <strong id="sunrise">
+                        --:--
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>🌇 Sunset</span>
+
+                    <strong id="sunset">
+                        --:--
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- 5 Day Forecast -->
+        <div class="forecast-section">
+
+            <h2>📅 5-Day Forecast</h2>
+
+            <div
+                id="forecastContainer"
+                class="forecast-container"
+            >
+
+                <div class="forecast-loading">
+                    Search a city to see the forecast
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Footer -->
+        <div class="footer">
+
+            <p>
+                Weather data powered by OpenWeather
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
